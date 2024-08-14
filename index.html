@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StepStyle Shoes</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .btn-center {
+            display: block;
+            margin: 0 auto;
+        }
+        .hero {
+            background: url('/src/banner1.webp') center/cover no-repeat;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">StepStyle Shoes</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#featured">Featured</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#categories">Categories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#new-arrivals">New Arrivals</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container text-white">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1 class="display-4">Step Into Style</h1>
+                    <p class="lead">Discover the perfect pair for every occasion.</p>
+                    <a href="#featured" class="btn btn-light btn-lg">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section id="featured" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Featured Products</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card h-100">
+                        <img src="/api/placeholder/400/300" alt="Running Shoes" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Pro Runner X1</h5>
+                            <p class="card-text">High-performance running shoes for serious athletes.</p>
+                            <p class="card-text"><strong>$129.99</strong></p>
+                            <a href="#" class="btn btn-primary btn-center">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card h-100">
+                        <img src="/api/placeholder/400/300" alt="Casual Sneakers" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Urban Comfort Sneakers</h5>
+                            <p class="card-text">Stylish and comfortable for everyday wear.</p>
+                            <p class="card-text"><strong>$79.99</strong></p>
+                            <a href="#" class="btn btn-primary btn-center">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card h-100">
+                        <img src="/api/placeholder/400/300" alt="Formal Shoes" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Executive Elegance</h5>
+                            <p class="card-text">Premium leather shoes for the discerning professional.</p>
+                            <p class="card-text"><strong>$159.99</strong></p>
+                            <a href="#" class="btn btn-primary btn-center">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Shop by Category</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="card">
+                        <img src="/api/placeholder/300/200" alt="Men's Shoes" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Men's Shoes</h5>
+                            <a href="#" class="btn btn-outline-primary btn-center">View All</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card">
+                        <img src="/api/placeholder/300/200" alt="Women's Shoes" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Women's Shoes</h5>
+                            <a href="#" class="btn btn-outline-primary btn-center">View All</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card">
+                        <img src="/api/placeholder/300/200" alt="Kids' Shoes" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Kids' Shoes</h5>
+                            <a href="#" class="btn btn-outline-primary btn-center">View All</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card">
+                        <img src="/api/placeholder/300/200" alt="Sport Shoes" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Sport Shoes</h5>
+                            <a href="#" class="btn btn-outline-primary btn-center">View All</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals Section -->
+    <section id="new-arrivals" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">New Arrivals</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="card product-card">
+                        <img src="/api/placeholder/300/200" alt="New Shoe 1" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Summer Breeze Sandals</h5>
+                            <p class="card-text"><strong>$49.99</strong></p>
+                            <a href="#" class="btn btn-sm btn-primary btn-center">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card product-card">
+                        <img src="/api/placeholder/300/200" alt="New Shoe 2" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Hiker's Delight Boots</h5>
+                            <p class="card-text"><strong>$119.99</strong></p>
+                            <a href="#" class="btn btn-sm btn-primary btn-center">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card product-card">
+                        <img src="/api/placeholder/300/200" alt="New Shoe 3" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Chic Office Pumps</h5>
+                            <p class="card-text"><strong>$89.99</strong></p>
+                            <a href="#" class="btn btn-sm btn-primary btn-center">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card product-card">
+                        <img src="/api/placeholder/300/200" alt="New Shoe 4" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Retro Kicks Sneakers</h5>
+                            <p class="card-text"><strong>$69.99</strong></p>
+                            <a href="#" class="btn btn-sm btn-primary btn-center">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-light py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2>About StepStyle Shoes</h2>
+                    <p>At StepStyle Shoes, we believe that great style starts from the ground up. Our curated collection of footwear combines fashion-forward designs with unparalleled comfort, ensuring that every step you take is a statement.</p>
+                    <p>With over a decade of experience in the shoe industry, we pride ourselves on offering high-quality shoes for men, women, and children. Our commitment to customer satisfaction and our passion for footwear make us your go-to destination for all your shoe needs.</p>
+                    <a href="#" class="btn btn-primary">Learn More About Us</a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/api/placeholder/600/400" alt="Our store" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container text-center">
+            <h2 class="mb-5">Contact Us</h2>
+            <p class="lead mb-4">Have questions or need assistance? We're here to help!</p>
+            <div class="row justify-content-center">
+                <div class="col-md-4 mb-3">
+                    <a href="mailto:info@stepstyleshoes.com" class="btn btn-primary btn-lg btn-block">Email Us</a>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <a href="tel:+11234567890" class="btn btn-success btn-lg btn-block">Call Now</a>
+                </div>
+            </div>
+            <div class="mt-5">
+                <h4>Visit Our Store</h4>
+                <p>123 Fashion Avenue, Styleville, ST 54321</p>
+                <h4>Store Hours</h4>
+                <p>Monday - Saturday: 10am - 9pm<br>Sunday: 11am - 6pm</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 StepStyle Shoes. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
