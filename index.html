@@ -1,242 +1,278 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StepStyle Shoes</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-        .btn-center {
-            display: block;
-            margin: 0 auto;
-        }
-        .hero {
-            background: url('/src/banner1.webp') center/cover no-repeat;
-            height: 60vh;
-            display: flex;
-            align-items: center;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StepStyle Shoes — Step Into Style</title>
+  <meta name="description" content="StepStyle Shoes: a free, open-source Bootstrap 5 shoe store template with gradients, smooth motion effects and a working cart demo. MIT licensed.">
+  <meta name="theme-color" content="#0a0614">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">StepStyle Shoes</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#featured">Featured</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#categories">Categories</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#new-arrivals">New Arrivals</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" id="progress" aria-hidden="true"></div>
+  <div class="mesh" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-glow" id="glow" aria-hidden="true"></div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container text-white">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h1 class="display-4">Step Into Style</h1>
-                    <p class="lead">Discover the perfect pair for every occasion.</p>
-                    <a href="#featured" class="btn btn-light btn-lg">Shop Now</a>
-                </div>
+  <div class="announce">
+    Free template · MIT license ·
+    <a href="https://github.com/EduGuate/ShoesStoreBootstrap" target="_blank" rel="noopener noreferrer">Download on GitHub ↗</a>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg site-nav" id="nav" aria-label="Main">
+    <div class="container">
+      <a class="brand" href="#home">
+        <span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 15c3 0 4-3 6-6l2 1c1 2 3 3 6 3.5 3 .5 4 1.5 4 3.5v1H3z"/><path d="M3 20h18"/></svg></span>
+        StepStyle
+      </a>
+      <div class="d-flex align-items-center gap-2 order-lg-3">
+        <button class="btn btn-ghost cart-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#cart" aria-controls="cart" aria-label="Open cart">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h15l-1.6 9H8z"/><path d="M6 6 5 3H2"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/></svg>
+          <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+        </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#featured">Featured</a></li>
+          <li class="nav-item"><a class="nav-link" href="#categories">Categories</a></li>
+          <li class="nav-item"><a class="nav-link" href="#new-arrivals">New Arrivals</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <!-- Hero -->
+    <header class="hero" id="home">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <span class="eyebrow reveal"><span class="dot"></span> New season drop is live</span>
+            <h1 aria-label="Step Into Style">
+              <span class="word" style="--w:0"><span>Step</span></span>
+              <span class="word" style="--w:1"><span>Into</span></span><br>
+              <span class="word" style="--w:2"><span class="grad-text">Style.</span></span>
+            </h1>
+            <p class="lead reveal" style="--i:3">Discover the perfect pair for every occasion — built for the way you move.</p>
+            <div class="hero-actions reveal" style="--i:4">
+              <a href="#featured" class="btn btn-epic btn-lg" data-magnetic>Shop Now
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+              <a href="#new-arrivals" class="btn btn-ghost btn-lg" data-magnetic>See New Arrivals</a>
             </div>
+            <div class="hero-stats reveal" style="--i:5">
+              <div><strong>10+</strong><span>years in footwear</span></div>
+              <div><strong>7</strong><span>signature styles</span></div>
+              <div><strong>Free</strong><span>returns, always</span></div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="hero-visual reveal" style="--i:2">
+              <div class="hero-main"><img src="assets/runner.jpg" alt="Red performance running shoe on a red background" width="1400" height="933" fetchpriority="high"></div>
+              <div class="hero-second"><img src="assets/retro.jpg" alt="Burgundy retro sneaker floating on a yellow background" width="900" height="1313"></div>
+              <span class="chip c1"><i></i> In stock · ships today</span>
+              <span class="chip c2">★ 4.9 · 2,300 reviews</span>
+            </div>
+          </div>
         </div>
+      </div>
+    </header>
+
+    <!-- Marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>FREE SHIPPING</span><b>✦</b><span>NEW DROPS WEEKLY</span><b>✦</b><span>30-DAY RETURNS</span><b>✦</b><span>STEP INTO STYLE</span><b>✦</b>
+        <span>FREE SHIPPING</span><b>✦</b><span>NEW DROPS WEEKLY</span><b>✦</b><span>30-DAY RETURNS</span><b>✦</b><span>STEP INTO STYLE</span><b>✦</b>
+        <span>FREE SHIPPING</span><b>✦</b><span>NEW DROPS WEEKLY</span><b>✦</b><span>30-DAY RETURNS</span><b>✦</b><span>STEP INTO STYLE</span><b>✦</b>
+        <span>FREE SHIPPING</span><b>✦</b><span>NEW DROPS WEEKLY</span><b>✦</b><span>30-DAY RETURNS</span><b>✦</b><span>STEP INTO STYLE</span><b>✦</b>
+      </div>
+    </div>
+
+    <!-- Featured -->
+    <section id="featured" aria-labelledby="featured-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">Best sellers</span>
+          <h2 class="section-title" id="featured-title">Featured Products</h2>
+          <p class="section-sub">Our most-loved pairs, tuned for comfort, performance and looks that turn heads.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4 reveal" style="--i:0">
+            <article class="product" data-tilt>
+              <div class="product-media"><span class="tag">Bestseller</span><img src="assets/runner.jpg" alt="Pro Runner X1 running shoes" width="1400" height="933" loading="lazy"></div>
+              <div class="product-body">
+                <h3>Pro Runner X1</h3>
+                <p>High-performance running shoes for serious athletes.</p>
+                <div class="price-row"><span class="price">$129.99</span>
+                  <button class="btn btn-epic btn-sm add" type="button" data-id="runner" data-name="Pro Runner X1" data-price="129.99" data-img="assets/runner.jpg">Add to Cart</button></div>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal" style="--i:1">
+            <article class="product" data-tilt>
+              <div class="product-media"><span class="tag">Everyday</span><img src="assets/urban.jpg" alt="Urban Comfort Sneakers in tan leather" width="1000" height="714" loading="lazy"></div>
+              <div class="product-body">
+                <h3>Urban Comfort Sneakers</h3>
+                <p>Stylish and comfortable for everyday wear.</p>
+                <div class="price-row"><span class="price">$79.99</span>
+                  <button class="btn btn-epic btn-sm add" type="button" data-id="urban" data-name="Urban Comfort Sneakers" data-price="79.99" data-img="assets/urban.jpg">Add to Cart</button></div>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal" style="--i:2">
+            <article class="product" data-tilt>
+              <div class="product-media"><span class="tag">Premium</span><img src="assets/formal.jpg" alt="Executive Elegance brown leather dress shoes" width="900" height="507" loading="lazy"></div>
+              <div class="product-body">
+                <h3>Executive Elegance</h3>
+                <p>Premium leather shoes for the discerning professional.</p>
+                <div class="price-row"><span class="price">$159.99</span>
+                  <button class="btn btn-epic btn-sm add" type="button" data-id="formal" data-name="Executive Elegance" data-price="159.99" data-img="assets/formal.jpg">Add to Cart</button></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Featured Products Section -->
-    <section id="featured" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">Featured Products</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card product-card h-100">
-                        <img src="/api/placeholder/400/300" alt="Running Shoes" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title">Pro Runner X1</h5>
-                            <p class="card-text">High-performance running shoes for serious athletes.</p>
-                            <p class="card-text"><strong>$129.99</strong></p>
-                            <a href="#" class="btn btn-primary btn-center">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card product-card h-100">
-                        <img src="/api/placeholder/400/300" alt="Casual Sneakers" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title">Urban Comfort Sneakers</h5>
-                            <p class="card-text">Stylish and comfortable for everyday wear.</p>
-                            <p class="card-text"><strong>$79.99</strong></p>
-                            <a href="#" class="btn btn-primary btn-center">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card product-card h-100">
-                        <img src="/api/placeholder/400/300" alt="Formal Shoes" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title">Executive Elegance</h5>
-                            <p class="card-text">Premium leather shoes for the discerning professional.</p>
-                            <p class="card-text"><strong>$159.99</strong></p>
-                            <a href="#" class="btn btn-primary btn-center">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Categories -->
+    <section id="categories" aria-labelledby="cat-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">Find your fit</span>
+          <h2 class="section-title" id="cat-title">Shop by Category</h2>
         </div>
+        <div class="row g-4">
+          <div class="col-6 col-lg-3 reveal" style="--i:0"><a class="cat" href="#new-arrivals"><img src="assets/boots.jpg" alt="" width="900" height="1350" loading="lazy"><div class="cat-info"><div><h3>Men's Shoes</h3><small>Boots, dress &amp; more</small></div><span class="arrow"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div></a></div>
+          <div class="col-6 col-lg-3 reveal" style="--i:1"><a class="cat" href="#new-arrivals"><img src="assets/heels.jpg" alt="" width="900" height="590" loading="lazy"><div class="cat-info"><div><h3>Women's Shoes</h3><small>Heels, flats &amp; more</small></div><span class="arrow"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div></a></div>
+          <div class="col-6 col-lg-3 reveal" style="--i:2"><a class="cat" href="#new-arrivals"><img src="assets/retro.jpg" alt="" width="900" height="1313" loading="lazy"><div class="cat-info"><div><h3>Kids' Shoes</h3><small>Bright, tough &amp; fun</small></div><span class="arrow"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div></a></div>
+          <div class="col-6 col-lg-3 reveal" style="--i:3"><a class="cat" href="#featured"><img src="assets/runner.jpg" alt="" width="1400" height="933" loading="lazy"><div class="cat-info"><div><h3>Sport Shoes</h3><small>Run, train, repeat</small></div><span class="arrow"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div></a></div>
+        </div>
+      </div>
     </section>
 
-    <!-- Categories Section -->
-    <section id="categories" class="bg-light py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">Shop by Category</h2>
-            <div class="row">
-                <div class="col-md-3 mb-4">
-                    <div class="card">
-                        <img src="/api/placeholder/300/200" alt="Men's Shoes" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title">Men's Shoes</h5>
-                            <a href="#" class="btn btn-outline-primary btn-center">View All</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="card">
-                        <img src="/api/placeholder/300/200" alt="Women's Shoes" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title">Women's Shoes</h5>
-                            <a href="#" class="btn btn-outline-primary btn-center">View All</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="card">
-                        <img src="/api/placeholder/300/200" alt="Kids' Shoes" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title">Kids' Shoes</h5>
-                            <a href="#" class="btn btn-outline-primary btn-center">View All</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="card">
-                        <img src="/api/placeholder/300/200" alt="Sport Shoes" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title">Sport Shoes</h5>
-                            <a href="#" class="btn btn-outline-primary btn-center">View All</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- New arrivals -->
+    <section id="new-arrivals" aria-labelledby="new-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">Just landed</span>
+          <h2 class="section-title" id="new-title">New Arrivals</h2>
+          <p class="section-sub">Fresh from the box. Grab them before they are gone.</p>
         </div>
+        <div class="row g-4">
+          <div class="col-6 col-lg-3 reveal" style="--i:0">
+            <article class="product compact" data-tilt>
+              <div class="product-media tall"><span class="tag">New</span><img src="assets/sandals.jpg" alt="Summer Breeze Sandals on a fluffy rug" width="900" height="1350" loading="lazy"></div>
+              <div class="product-body"><h4>Summer Breeze Sandals</h4>
+                <div class="price-row"><span class="price">$49.99</span><button class="btn btn-epic btn-sm add" type="button" data-id="sandals" data-name="Summer Breeze Sandals" data-price="49.99" data-img="assets/sandals.jpg" aria-label="Add Summer Breeze Sandals to cart">Add</button></div></div>
+            </article>
+          </div>
+          <div class="col-6 col-lg-3 reveal" style="--i:1">
+            <article class="product compact" data-tilt>
+              <div class="product-media tall"><span class="tag">New</span><img src="assets/boots.jpg" alt="Hiker's Delight Boots being laced up" width="900" height="1350" loading="lazy"></div>
+              <div class="product-body"><h4>Hiker's Delight Boots</h4>
+                <div class="price-row"><span class="price">$119.99</span><button class="btn btn-epic btn-sm add" type="button" data-id="boots" data-name="Hiker's Delight Boots" data-price="119.99" data-img="assets/boots.jpg" aria-label="Add Hiker's Delight Boots to cart">Add</button></div></div>
+            </article>
+          </div>
+          <div class="col-6 col-lg-3 reveal" style="--i:2">
+            <article class="product compact" data-tilt>
+              <div class="product-media tall"><span class="tag">New</span><img src="assets/heels.jpg" alt="Chic Office Pumps in navy suede" width="900" height="590" loading="lazy"></div>
+              <div class="product-body"><h4>Chic Office Pumps</h4>
+                <div class="price-row"><span class="price">$89.99</span><button class="btn btn-epic btn-sm add" type="button" data-id="heels" data-name="Chic Office Pumps" data-price="89.99" data-img="assets/heels.jpg" aria-label="Add Chic Office Pumps to cart">Add</button></div></div>
+            </article>
+          </div>
+          <div class="col-6 col-lg-3 reveal" style="--i:3">
+            <article class="product compact" data-tilt>
+              <div class="product-media tall"><span class="tag">New</span><img src="assets/retro.jpg" alt="Retro Kicks Sneakers in burgundy" width="900" height="1313" loading="lazy"></div>
+              <div class="product-body"><h4>Retro Kicks Sneakers</h4>
+                <div class="price-row"><span class="price">$69.99</span><button class="btn btn-epic btn-sm add" type="button" data-id="retro" data-name="Retro Kicks Sneakers" data-price="69.99" data-img="assets/retro.jpg" aria-label="Add Retro Kicks Sneakers to cart">Add</button></div></div>
+            </article>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- New Arrivals Section -->
-    <section id="new-arrivals" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">New Arrivals</h2>
-            <div class="row">
-                <div class="col-md-3 mb-4">
-                    <div class="card product-card">
-                        <img src="/api/placeholder/300/200" alt="New Shoe 1" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title">Summer Breeze Sandals</h5>
-                            <p class="card-text"><strong>$49.99</strong></p>
-                            <a href="#" class="btn btn-sm btn-primary btn-center">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="card product-card">
-                        <img src="/api/placeholder/300/200" alt="New Shoe 2" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title">Hiker's Delight Boots</h5>
-                            <p class="card-text"><strong>$119.99</strong></p>
-                            <a href="#" class="btn btn-sm btn-primary btn-center">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="card product-card">
-                        <img src="/api/placeholder/300/200" alt="New Shoe 3" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title">Chic Office Pumps</h5>
-                            <p class="card-text"><strong>$89.99</strong></p>
-                            <a href="#" class="btn btn-sm btn-primary btn-center">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="card product-card">
-                        <img src="/api/placeholder/300/200" alt="New Shoe 4" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title">Retro Kicks Sneakers</h5>
-                            <p class="card-text"><strong>$69.99</strong></p>
-                            <a href="#" class="btn btn-sm btn-primary btn-center">Add to Cart</a>
-                        </div>
-                    </div>
-                </div>
+    <!-- About -->
+    <section id="about" class="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about-panel reveal">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+              <span class="kicker">Our story</span>
+              <h2 class="section-title" id="about-title">About StepStyle Shoes</h2>
+              <p>At StepStyle Shoes, we believe that great style starts from the ground up. Our curated collection combines fashion-forward designs with unparalleled comfort.</p>
+              <p>With over a decade of experience in the shoe industry, we offer high-quality shoes for men, women, and children. Our commitment to customer satisfaction drives everything we do.</p>
+              <a href="#contact" class="btn btn-epic" data-magnetic>Learn More About Us</a>
             </div>
+            <div class="col-lg-6">
+              <div class="stat-grid">
+                <div class="stat"><strong><span data-count="10">0</span>+</strong><span>years of experience</span></div>
+                <div class="stat"><strong><span data-count="50">0</span>k</strong><span>happy customers</span></div>
+                <div class="stat"><strong><span data-count="7">0</span></strong><span>signature styles</span></div>
+                <div class="stat"><strong><span data-count="30">0</span></strong><span>day free returns</span></div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="bg-light py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h2>About StepStyle Shoes</h2>
-                    <p>At StepStyle Shoes, we believe that great style starts from the ground up. Our curated collection of footwear combines fashion-forward designs with unparalleled comfort, ensuring that every step you take is a statement.</p>
-                    <p>With over a decade of experience in the shoe industry, we pride ourselves on offering high-quality shoes for men, women, and children. Our commitment to customer satisfaction and our passion for footwear make us your go-to destination for all your shoe needs.</p>
-                    <a href="#" class="btn btn-primary">Learn More About Us</a>
-                </div>
-                <div class="col-lg-6">
-                    <img src="/api/placeholder/600/400" alt="Our store" class="img-fluid rounded">
-                </div>
-            </div>
+    <!-- Contact -->
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="cta reveal">
+          <h2 id="contact-title">Ready to step up?</h2>
+          <p class="lead mb-4">Have questions or need assistance? We're here to help!</p>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a href="mailto:info@stepstyleshoes.com" class="btn btn-dark-solid btn-lg" data-magnetic>Email Us</a>
+            <a href="tel:+11234567890" class="btn btn-outline-dark-solid btn-lg" data-magnetic>Call Now</a>
+          </div>
+          <div class="info text-start">
+            <div><h4>Visit Our Store</h4><p>123 Fashion Avenue, Styleville, ST 54321</p></div>
+            <div><h4>Store Hours</h4><p>Monday – Saturday: 10am – 9pm<br>Sunday: 11am – 6pm</p></div>
+          </div>
         </div>
+      </div>
     </section>
+  </main>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-5">
-        <div class="container text-center">
-            <h2 class="mb-5">Contact Us</h2>
-            <p class="lead mb-4">Have questions or need assistance? We're here to help!</p>
-            <div class="row justify-content-center">
-                <div class="col-md-4 mb-3">
-                    <a href="mailto:info@stepstyleshoes.com" class="btn btn-primary btn-lg btn-block">Email Us</a>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <a href="tel:+11234567890" class="btn btn-success btn-lg btn-block">Call Now</a>
-                </div>
-            </div>
-            <div class="mt-5">
-                <h4>Visit Our Store</h4>
-                <p>123 Fashion Avenue, Styleville, ST 54321</p>
-                <h4>Store Hours</h4>
-                <p>Monday - Saturday: 10am - 9pm<br>Sunday: 11am - 6pm</p>
-            </div>
-        </div>
-    </section>
+  <footer>
+    <div class="container d-flex flex-wrap justify-content-between gap-2">
+      <span>&copy; <span id="year">2026</span> StepStyle Shoes. All rights reserved.</span>
+      <span>Free template · MIT · <a href="https://github.com/EduGuate/ShoesStoreBootstrap" target="_blank" rel="noopener noreferrer">GitHub</a></span>
+    </div>
+  </footer>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2024 StepStyle Shoes. All rights reserved.</p>
-    </footer>
+  <!-- Cart drawer -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="cart" aria-labelledby="cart-title">
+    <div class="offcanvas-header">
+      <h2 class="h4 m-0" id="cart-title">Your cart</h2>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close cart"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column">
+      <div id="cart-items" class="flex-grow-1"></div>
+      <div class="cart-foot">
+        <div class="d-flex justify-content-between align-items-center mb-3"><span class="text-body-secondary">Subtotal</span><strong class="fs-4 price" id="cart-total">$0.00</strong></div>
+        <button class="btn btn-epic w-100" type="button" id="checkout">Checkout (demo)</button>
+        <p class="small text-body-secondary mt-2 mb-0">Demo template: no payments are processed.</p>
+      </div>
+    </div>
+  </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <div class="toast-lite" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
